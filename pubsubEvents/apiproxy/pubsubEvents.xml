@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<APIProxy revision="2" name="pubsubEvents">
+    <ConfigurationVersion majorVersion="4" minorVersion="0"/>
+    <CreatedAt>1468795906596</CreatedAt>
+    <CreatedBy>ssridhar@apigee.com</CreatedBy>
+    <Description></Description>
+    <DisplayName>pubsubEvents</DisplayName>
+    <LastModifiedAt>1468796411664</LastModifiedAt>
+    <LastModifiedBy>ssridhar@apigee.com</LastModifiedBy>
+    <Policies>
+        <Policy>Get-Subscribers</Policy>
+        <Policy>Get-Topic-Details</Policy>
+        <Policy>Push-Notifications</Policy>
+    </Policies>
+    <ProxyEndpoints>
+        <ProxyEndpoint>default</ProxyEndpoint>
+    </ProxyEndpoints>
+    <Resources>
+        <Resource>jsc://get-topic-details.js</Resource>
+        <Resource>jsc://push-notifications.js</Resource>
+    </Resources>
+    <TargetServers/>
+    <TargetEndpoints/>
+    <validate>false</validate>
+</APIProxy>

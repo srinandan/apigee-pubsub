@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Javascript async="false" continueOnError="false" enabled="true" timeLimit="200" name="Filter-Search-Subscribers">
+    <DisplayName>Filter Search Subscribers</DisplayName>
+    <Properties/>
+    <ResourceURL>jsc://filter-search-subscribers.js</ResourceURL>
+</Javascript>

@@ -1,0 +1,87 @@
+[
+  {
+    "name": "sub1",
+    "description": "subscriber for topic1",
+    "topic": "topic1",
+    "callback": "http://apigee.com"
+  },
+  {
+    "name": "sub2",
+    "description": "subscriber for topic2",
+    "topic": "topic2",
+    "callback": "http://apigee.com"
+  },
+  {
+    "name": "sub3",
+    "description": "subscriber for topic 1",
+    "topic": "topic1",
+    "callback": "http://apigee.com"
+  },
+  {
+    "name": "sub4",
+    "description": "subscriber for topic 2",
+    "topic": "topic2",
+    "callback": "http://apigee.com"
+  },
+  {
+    "name": "sub5",
+    "description": "subscriber for topic 1",
+    "topic": "topic1",
+    "callback": "http://apigee.com"
+  }
+]
+
+
+
+[
+  {
+    "name": "topic1",
+    "description": "this is topic1"
+  },
+  {
+    "name": "topic2",
+    "description": "this is topic2"
+  },
+  {
+    "name": "topic3",
+    "description": "this is topic 3"
+  }
+]
+
+curl -X POST https://api.usergrid.com/ssridhar/sandbox/topic/topic1/subscribers/subscribers/sub1
+curl -X POST https://api.usergrid.com/ssridhar/sandbox/topic/topic1/subscribers/subscribers/sub3
+curl -X POST https://api.usergrid.com/ssridhar/sandbox/topic/topic1/subscribers/subscribers/sub5
+curl -X POST https://api.usergrid.com/ssridhar/sandbox/topic/topic2/subscribers/subscribers/sub4
+curl -X POST https://api.usergrid.com/ssridhar/sandbox/topic/topic2/subscribers/subscribers/sub2
+
+curl -X POST https://api.usergrid.com/ssridhar/sandbox/subscribers/sub1/subscribes/topic/topic1
+curl -X POST https://api.usergrid.com/ssridhar/sandbox/subscribers/sub2/subscribes/topic/topic2
+curl -X POST https://api.usergrid.com/ssridhar/sandbox/subscribers/sub3/subscribes/topic/topic1
+curl -X POST https://api.usergrid.com/ssridhar/sandbox/subscribers/sub4/subscribes/topic/topic2
+curl -X POST https://api.usergrid.com/ssridhar/sandbox/subscribers/sub5/subscribes/topic/topic1
+
+
+[
+{
+  "id": 1,
+  "topic": "topic1",
+  "data": "data pertaining to the event"
+},{
+  "id": 2,
+  "topic": "topic1",
+  "data": "data pertaining to the event"
+},{
+  "id": 3,
+  "topic": "topic1",
+  "data": "data pertaining to the event"
+},{
+  "id": 4,
+  "topic": "topic1",
+  "data": "data pertaining to the event"
+},{
+  "id": 5,
+  "topic": "topic1",
+  "data": "data pertaining to the event"
+}
+]
+

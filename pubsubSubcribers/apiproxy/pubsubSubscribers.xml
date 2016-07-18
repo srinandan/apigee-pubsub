@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<APIProxy revision="1" name="pubsubSubscribers">
+    <ConfigurationVersion majorVersion="4" minorVersion="0"/>
+    <CreatedAt>1466196118031</CreatedAt>
+    <CreatedBy>ssridhar@apigee.com</CreatedBy>
+    <Description></Description>
+    <DisplayName>pubsubSubscribers</DisplayName>
+    <LastModifiedAt>1468702601899</LastModifiedAt>
+    <LastModifiedBy>ssridhar@apigee.com</LastModifiedBy>
+    <Policies>
+        <Policy>Extract-Subscriber-Name</Policy>
+        <Policy>Filter-Get-Topics</Policy>
+        <Policy>Filter-Search-Subscribers</Policy>
+        <Policy>Set-Subscriber-Name</Policy>
+        <Policy>Set-Topic-URL</Policy>
+    </Policies>
+    <ProxyEndpoints>
+        <ProxyEndpoint>default</ProxyEndpoint>
+    </ProxyEndpoints>
+    <Resources>
+        <Resource>jsc://filter-get-topics.js</Resource>
+        <Resource>jsc://filter-search-subscribers.js</Resource>
+    </Resources>
+    <TargetServers/>
+    <TargetEndpoints>
+        <TargetEndpoint>default</TargetEndpoint>
+    </TargetEndpoints>
+    <validate>false</validate>
+</APIProxy>

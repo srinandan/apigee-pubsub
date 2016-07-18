@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ProxyEndpoint name="default">
+    <Description/>
+    <FaultRules/>
+    <PreFlow name="PreFlow">
+        <Request/>
+        <Response/>
+    </PreFlow>
+    <PostFlow name="PostFlow">
+        <Request/>
+        <Response/>
+    </PostFlow>
+    <Flows>
+        <Flow name="Get Subscriber">
+            <Description/>
+            <Request>
+                <Step>
+                    <Name>Extract-Subscriber-Name</Name>
+                </Step>
+            </Request>
+            <Response/>
+            <Condition>(proxy.pathsuffix MatchesPath "/{subscribername}") and (request.verb = "GET")</Condition>
+        </Flow>
+        <Flow name="Create Subscriber">
+            <Description/>
+            <Request/>
+            <Response/>
+            <Condition>(proxy.pathsuffix MatchesPath "/") and (request.verb = "POST")</Condition>
+        </Flow>
+        <Flow name="Update Subscriber">
+            <Description/>
+            <Request/>
+            <Response/>
+            <Condition>(proxy.pathsuffix MatchesPath "/{subscribername}") and (request.verb = "PUT")</Condition>
+        </Flow>
+        <Flow name="Search Subscribers">
+            <Description/>
+            <Request/>
+            <Response>
+                <Step>
+                    <Name>Filter-Search-Subscribers</Name>
+                </Step>
+            </Response>
+            <Condition>(proxy.pathsuffix MatchesPath "/") and (request.verb = "GET")</Condition>
+        </Flow>
+        <Flow name="Get Subscriber Topics">
+            <Description/>
+            <Request>
+                <Step>
+                    <Name>Extract-Subscriber-Name</Name>
+                </Step>
+            </Request>
+            <Response>
+                <Step>
+                    <Name>Filter-Get-Topics</Name>
+                </Step>
+            </Response>
+            <Condition>(proxy.pathsuffix MatchesPath "/{subscribername}/topics") and (request.verb = "GET")</Condition>
+        </Flow>
+    </Flows>
+    <HTTPProxyConnection>
+        <BasePath>/v1/subscribers</BasePath>
+        <Properties/>
+        <VirtualHost>default</VirtualHost>
+        <VirtualHost>secure</VirtualHost>
+    </HTTPProxyConnection>
+    <RouteRule name="default">
+        <TargetEndpoint>default</TargetEndpoint>
+    </RouteRule>
+</ProxyEndpoint>
